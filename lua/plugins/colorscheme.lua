@@ -1,3 +1,5 @@
+local transparentBG = false
+
 return {
 
   -- tokyonight
@@ -6,9 +8,8 @@ return {
     enabled = false,
     lazy = false,
     priority = 1000,
-    opts = { transparent = false },
-    config = function(_, opts)
-      require("tokyonight").setup(opts)
+    config = function()
+      require("tokyonight").setup({ transparent = transparentBG })
       vim.cmd("colorscheme tokyonight")
     end
   },
@@ -20,9 +21,8 @@ return {
     name = "catppuccin",
     lazy = false,
     priority = 1000,
-    opts = { transparent_background = false },
-    config = function(_, opts)
-      require("catppuccin").setup(opts)
+    config = function()
+      require("catppuccin").setup({ transparent_background = transparentBG })
       vim.cmd("colorscheme catppuccin")
     end
   },
@@ -34,9 +34,10 @@ return {
     name = "rose-pine",
     lazy = false,
     priority = 1000,
-    opts = { disable_background = false },
-    config = function(_, opts)
-      require("rose-pine").setup(opts)
+    config = function()
+      require("rose-pine").setup({
+        styles = { italic = false, transparency = transparentBG }
+      })
       vim.cmd("colorscheme rose-pine")
     end
   }
