@@ -11,3 +11,4 @@ vim.opt.splitbelow = true
 
 vim.opt.number = true
 vim.opt.relativenumber = true
+vim.opt.signcolumn = "yes"
