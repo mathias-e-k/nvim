@@ -30,7 +30,7 @@ return {
   -- rose-pine
   {
     "rose-pine/neovim",
-    enabled = true,
+    enabled = false,
     name = "rose-pine",
     lazy = false,
     priority = 1000,
@@ -39,6 +39,17 @@ return {
         styles = { italic = false, transparency = transparentBG }
       })
       vim.cmd("colorscheme rose-pine")
+    end
+  },
+
+  -- ashen
+  {
+    "ficcdaf/ashen.nvim",
+    enabled = true,
+    lazy = false,
+    priority = 1000,
+    config = function()
+      vim.cmd("colorscheme ashen")
     end
   }
 }

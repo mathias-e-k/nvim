@@ -3,14 +3,15 @@ return {
     "neovim/nvim-lspconfig",
     dependencies = {
       {
-        "folke/lazydev.nvim",
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
         { 'j-hui/fidget.nvim', opts = {} },
+        "saghen/blink.cmp",
       },
     },
     config = function()
       local capabilities = vim.lsp.protocol.make_client_capabilities()
+      capabilities = require('blink.cmp').get_lsp_capabilities(capabilities)
       require("mason").setup()
       require("mason-lspconfig").setup({
         ensure_installed = {

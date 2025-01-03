@@ -3,7 +3,8 @@ return {
 
   {
     "folke/lazydev.nvim",
-    ft = "lua", -- only load on lua files
+    ft = "lua",
+    cmd = "LazyDev",
     opts = {
       library = {
         -- See the configuration section for more details
@@ -35,6 +36,7 @@ return {
         changedelete = { text = '~' },
       },
     },
+    event = "UiEnter"
   },
 
   {
@@ -46,4 +48,12 @@ return {
     opts = { signs = false }
   },
 
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    main = "ibl",
+    ---@module "ibl"
+    ---@type ibl.config
+    opts = {},
+    event = "UiEnter"
+  },
 }
